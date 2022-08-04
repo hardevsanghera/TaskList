@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel Quickstart - Basic</title>
+    <title>Nutanix Self Service Demonstration</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -17,7 +17,7 @@
     <style>
         body {
             font-family: 'Lato';
-            background-color: #005495;
+            background-color: rgb(172, 209, 71);,
         }
 
         .fa-btn {
@@ -34,7 +34,7 @@
     <div id="calmgb" class="calm-background"></div>
     <div class="container">
         <div class="row text-center task-header">
-            <h2>Task Manager v12.0</h2>
+            <h2><h2 style="color: white;">Task Manager Managed by Nutanix Self Service</h2><h2 style="color: white;">[webserver IP: XXSERVERIPXX]</h2><a href="{{URL::asset('arch.jpg')}}">See Architecture</a>
         </div>
     </div>
     @yield('content')

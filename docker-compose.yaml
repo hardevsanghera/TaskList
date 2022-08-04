@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: tasklist
+    container_name: tasklist-app
+    restart: unless-stopped
+    working_dir: /var/www/laravel
+    volumes:
+      - ./:/var/www/laravel
+    networks:
+      - tasklist
+
+  nginx:
+    image: nginx:alpine
+    container_name: tasklist-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/laravel
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - tasklist
+
+networks:
+  tasklist:
+    driver: bridge
