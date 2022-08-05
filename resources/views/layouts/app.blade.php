@@ -34,7 +34,9 @@
     <div id="calmgb" class="calm-background"></div>
     <div class="container">
         <div class="row text-center task-header">
-            <h2><h2 style="color: white;">Task Manager Managed by Nutanix Self Service</h2><h2 style="color: white;">[webserver IP: XXSERVERIPXX]</h2><a href="{{URL::asset('arch.jpg')}}">See Architecture</a>
+                <h2 style="color: white;">Task Manager Managed by Nutanix Self Service</h2>
+                <h2 style="color: white;">[webserver IP: <?php echo file_get_contents("http://ipecho.net/plain"); ?>]</h2>
+                <a href="{{URL::asset('arch.jpg')}}">See Architecture</a>
         </div>
     </div>
     @yield('content')
