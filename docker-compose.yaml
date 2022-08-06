@@ -13,17 +13,15 @@ services:
     working_dir: /var/www/laravel
     volumes:
       - ./:/var/www/laravel
-    network_mode: bridge
+    network_mode: host
 
   nginx:
     image: nginx:stable-alpine
     container_name: tasklist-nginx
     restart: unless-stopped
-    ports:
-      - 8080:80
     volumes:
       - ./:/var/www/laravel
       - ./docker-compose/nginx:/etc/nginx/conf.d
-    network_mode: bridge
+    network_mode: host
     extra_hosts:
       - "app:172.17.0.3"
